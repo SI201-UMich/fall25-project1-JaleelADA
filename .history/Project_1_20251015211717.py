@@ -117,11 +117,5 @@ def percentage_high_yield_maize_by_region(rows: List[CleanRow], threshold: float
     return sorted(results, key=lambda x: x[0])
 
 def write_percentage_high_yield_maize_by_region(results: List[Tuple[str, float, int, int]], output_dir: Path) -> None:
-    """Write text summary of percentage high-yield maize by region to CSV."""
     
-    with out_path.open('w', newline='', encoding='utf-8') as f:
-        f.write("Percentage High-Yield Maize Harvests by Region in Tons/Hectare\n")
-        f.write('=' * 60 + '\n')
-        for region, percent, high, total in results:
-            f.write(f"{region:20} {percent:6.2f}% ({high}/{total})\n")
     
