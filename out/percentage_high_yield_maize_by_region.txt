@@ -1,0 +1,6 @@
+Percentage High-Yield Maize Harvests by Region in Tons/Hectare
+============================================================
+East                  42.11% (17488/41530)
+North                 42.48% (17770/41830)
+South                 42.26% (17635/41725)
+West                  42.07% (17561/41739)

@@ -155,14 +155,9 @@ def main() -> None:
     #calculation 1
     avg_yield_results = average_yield_by_region(clean_rows)
     write_average_yield_by_region(avg_yield_results, OUTPUT_DIR)
-
-    #calculation 2
-    threshold = 5.0
-    high_yield_results = percentage_high_yield_maize_by_region(clean_rows, threshold=threshold)
-    write_percentage_high_yield_maize_by_region(high_yield_results, OUTPUT_DIR)
-
-    print("Analysis complete.")
-    print(f"Results written to: {OUTPUT_DIR}")
     
-if __name__ == "__main__":
-    main()
+    #calculation 2 
+    threshold = 5.0
+    
+    high_yield_results = percentage_high_yield_maize_by_region(clean_rows, threshold=5.0)
+    write_percentage_high_yield_maize_by_retgion(high_yield_results, OUTPUT_DIR)

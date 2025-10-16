@@ -162,7 +162,5 @@ def main() -> None:
     write_percentage_high_yield_maize_by_region(high_yield_results, OUTPUT_DIR)
 
     print("Analysis complete.")
-    print(f"Results written to: {OUTPUT_DIR}")
+    print()
     
-if __name__ == "__main__":
-    main()

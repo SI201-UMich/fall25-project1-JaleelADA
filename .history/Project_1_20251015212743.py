@@ -160,9 +160,5 @@ def main() -> None:
     threshold = 5.0
     high_yield_results = percentage_high_yield_maize_by_region(clean_rows, threshold=threshold)
     write_percentage_high_yield_maize_by_region(high_yield_results, OUTPUT_DIR)
-
-    print("Analysis complete.")
-    print(f"Results written to: {OUTPUT_DIR}")
     
-if __name__ == "__main__":
-    main()
+    

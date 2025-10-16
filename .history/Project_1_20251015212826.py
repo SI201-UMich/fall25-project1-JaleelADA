@@ -164,5 +164,3 @@ def main() -> None:
     print("Analysis complete.")
     print(f"Results written to: {OUTPUT_DIR}")
     
-if __name__ == "__main__":
-    main()

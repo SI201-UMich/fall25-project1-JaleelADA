@@ -124,7 +124,6 @@ def percentage_high_yield_maize_by_region(rows: List[CleanRow], threshold: float
 def write_percentage_high_yield_maize_by_region(results: List[Tuple[str, float, int, int]], output_dir: Path) -> None:
     """Write text summary of percentage high-yield maize by region to CSV."""
     
-    out_path = output_dir / "percentage_high_yield_maize_by_region.txt"
     with out_path.open('w', newline='', encoding='utf-8') as f:
         f.write("Percentage High-Yield Maize Harvests by Region in Tons/Hectare\n")
         f.write('=' * 60 + '\n')
@@ -135,34 +134,10 @@ def write_percentage_high_yield_maize_by_region(results: List[Tuple[str, float, 
 # Helper to find key in row with possible alternatives
 def find_key(rows: List[CleanRow], alternatives: List[str]) -> str:
     if not rows:
-        return alternatives[0]
+        return candidates[0]
     lower_map = {k.lower(): k for k in rows[0].keys()}
-    for c in alternatives:
+    for c in candidates:
         if c.lower() in lower_map:
             return lower_map[c.lower()]
         
-    return alternatives[0]
-
-
-def main() -> None:
-    csv_path = Path("crop_yield.csv")
-    if not csv_path.exists():
-        print(f"Error: CSV file '{csv_path}' does not exist.", file=sys.stderr)
-        return
-    rows = load_csv_to_dicts(csv_path)
-    clean_rows = coerce_types(rows)
-    
-    #calculation 1
-    avg_yield_results = average_yield_by_region(clean_rows)
-    write_average_yield_by_region(avg_yield_results, OUTPUT_DIR)
-
-    #calculation 2
-    threshold = 5.0
-    high_yield_results = percentage_high_yield_maize_by_region(clean_rows, threshold=threshold)
-    write_percentage_high_yield_maize_by_region(high_yield_results, OUTPUT_DIR)
-
-    print("Analysis complete.")
-    print(f"Results written to: {OUTPUT_DIR}")
-    
-if __name__ == "__main__":
-    main()
+    return candidates[0]
