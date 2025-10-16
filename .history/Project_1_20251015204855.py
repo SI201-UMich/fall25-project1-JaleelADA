@@ -30,13 +30,3 @@ def coerce_types(rows: List[Row]) -> List[CleanRow]:
             value = value.strip()
             #Attemp numeric coercion
             if key.lower()  {"yield (tons/hectare)", "yield_tons_per_hectare", "rainfall_mm", "rainfall (mm)", "temperature_c" }:
-                try:
-                    new[key] = float(value) if value else None
-                except ValueError:
-                    new[key] = None
-            else:
-                new[key] = value
-        cleaned.append(new)
-    return cleaned
-                
-                    

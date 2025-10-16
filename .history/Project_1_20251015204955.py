@@ -34,9 +34,5 @@ def coerce_types(rows: List[Row]) -> List[CleanRow]:
                     new[key] = float(value) if value else None
                 except ValueError:
                     new[key] = None
-            else:
-                new[key] = value
-        cleaned.append(new)
-    return cleaned
-                
+            else:\
                     

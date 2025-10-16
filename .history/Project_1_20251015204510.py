@@ -24,19 +24,4 @@ def coerce_types(rows: List[Row]) -> List[CleanRow]:
     """Convert numeric fields to appropriate types. Skip rows with invalid data."""
     cleaned: List[CleanRow] = []
     for row in rows:
-        new = {}
-        for key, value in row.items():
-            key = key.strip()
-            value = value.strip()
-            #Attemp numeric coercion
-            if key.lower()  {"yield (tons/hectare)", "yield_tons_per_hectare", "rainfall_mm", "rainfall (mm)", "temperature_c" }:
-                try:
-                    new[key] = float(value) if value else None
-                except ValueError:
-                    new[key] = None
-            else:
-                new[key] = value
-        cleaned.append(new)
-    return cleaned
-                
-                    
+        new 

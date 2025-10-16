@@ -36,7 +36,5 @@ def coerce_types(rows: List[Row]) -> List[CleanRow]:
                     new[key] = None
             else:
                 new[key] = value
-        cleaned.append(new)
-    return cleaned
                 
                     
