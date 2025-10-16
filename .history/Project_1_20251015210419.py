@@ -68,4 +68,4 @@ def average_yield_by_region(rows: List[CleanRow]) -> List[Tuple[str, float]]:
         if c > 0:
             results.append((region, total / c))
 
-    return sorted(results, key=lambda x: x[0])
+    return.sort(key= lambda) x: x[0]

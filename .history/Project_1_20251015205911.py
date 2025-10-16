@@ -59,13 +59,4 @@ def average_yield_by_region(rows: List[CleanRow]) -> List[Tuple[str, float]]:
         yv = row.get(yield_key)
         if not region or isinstance(yv, str) or yv is None:
             continue
-        sums[region] = sums.get(region, 0.0) + yv
-        counts[region] = counts.get(region, 0) + 1
-
-    results = []
-    for region, total in sums.items():
-        c = counts[region]
-        if c > 0:
-            results.append((region, total / c))
-
-    return sorted(results, key=lambda x: x[0])
+        sums[region]

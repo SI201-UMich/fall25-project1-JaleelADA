@@ -43,29 +43,3 @@ def coerce_types(rows: List[Row]) -> List[CleanRow]:
                     
 # Calculation 1: Average Yield by Region
 def average_yield_by_region(rows: List[CleanRow]) -> List[Tuple[str, float]]:
-    """
-    Calculate average crop yield for each region (across all crops).
-    Uses: Region, Crop, Yield (tons/hectare)
-    Returns sorted list of (region, average_yield).
-    """
-    sums: Dict[str, float] = {}
-    counts: Dict[str, int] = {}
-    
-    region_key = find_key(rows, ["Region"])
-    yield_key = find_key(rows, ["Yield (tons/hectare)", "yield (tons/hectare)", "Yield_tons_per_hectare", "yield_tons_per_hectare"])
-
-    for row in rows:
-        region = row.get(region_key)
-        yv = row.get(yield_key)
-        if not region or isinstance(yv, str) or yv is None:
-            continue
-        sums[region] = sums.get(region, 0.0) + yv
-        counts[region] = counts.get(region, 0) + 1
-
-    results = []
-    for region, total in sums.items():
-        c = counts[region]
-        if c > 0:
-            results.append((region, total / c))
-
-    return sorted(results, key=lambda x: x[0])
